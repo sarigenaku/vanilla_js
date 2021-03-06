@@ -19,7 +19,7 @@ console.log(y)
 */
 
 
-// let 연습
+/* let 연습
 let x = 34
 var y = 78
 
@@ -34,3 +34,20 @@ if (1 == 1) {
 }
 console.log(x)
 console.log(y)
+*/
+
+
+// const 연습
+const a = 89
+
+function abc() {
+    const a = 90
+}
+
+if (1 == 1) {
+    const a = 91
+}
+
+abc()
+//a = 92
+console.log(a)
