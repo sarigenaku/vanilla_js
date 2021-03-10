@@ -18,3 +18,6 @@ https://bvc12.tistory.com/254
 Q) js scirpt문의 Document.querySelector()란?
 Document.querySelector()는 제공한 선택자 또는 선택자 뭉치와 일치하는 문서 내 첫 번째 Element를 반환합니다. 일치하는 요소가 없으면 null을 반환합니다.
 https://developer.mozilla.org/ko/docs/Web/API/Document/querySelector
+
+
+practiced PR
