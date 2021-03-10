@@ -20,4 +20,4 @@ Document.querySelector()는 제공한 선택자 또는 선택자 뭉치와 일�
 https://developer.mozilla.org/ko/docs/Web/API/Document/querySelector
 
 
-practiced PR
+practicing PR
