@@ -5,11 +5,12 @@ function getTime() {
     const hours = date.getHours();
     const minutes = date.getMinutes();
     const seconds = date.getSeconds();
-    clockTitle.innerHTML = ( hours < 10 ? `0${hours}` : hours ) + ":" + ( minutes < 10 ? `0${minutes}` : minutes ) + ":" + ( seconds < 10 ? `0${seconds}` : seconds )
+    clockTitle.innerHTML = `${ hours < 10 ? `0${hours}` : hours }:${ minutes < 10 ? `0${minutes}` : minutes }:${ seconds < 10 ? `0${seconds}` : seconds }`
 }
 
 function init() {
-    getTime();
+    //getTime();
+    setInterval(getTime, 1000); //milliseconds: 1/1000 = 1초  //init() (X)    
 }
 
-setInterval(init, 1000) //milliseconds: 1/1000 = 1초  //init() (X)
+init();
