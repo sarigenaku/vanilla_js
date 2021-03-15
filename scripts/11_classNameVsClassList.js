@@ -3,23 +3,13 @@ const eva = document.getElementById("eva");
 
 const CLICKED_CLASS = "clicked";
 
-/*
+
 function handleClick() {
     const hasClass = eva.classList.contains(CLICKED_CLASS);
     if (hasClass) {
         eva.classList.remove(CLICKED_CLASS);
     } else {
         eva.classList.add(CLICKED_CLASS);
-    }
-}
-*/
-
-function handleClick() {
-    const currentClassName = eva.className;
-    if (currentClassName !== CLICKED_CLASS) {
-        eva.className = CLICKED_CLASS;
-    } else {
-        eva.className = "";
     }
 }
 
