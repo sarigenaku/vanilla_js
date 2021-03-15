@@ -5,11 +5,11 @@ function getTime() {
     const hours = date.getHours();
     const minutes = date.getMinutes();
     const seconds = date.getSeconds();
-    clockTitle.innerHTML = `Current time is ${hours}:${minutes}:${seconds}`;
+    clockTitle.innerHTML = ( hours < 10 ? `0${hours}` : hours ) + ":" + ( minutes < 10 ? `0${minutes}` : minutes ) + ":" + ( seconds < 10 ? `0${seconds}` : seconds )
 }
 
 function init() {
     getTime();
 }
 
-init();
+setInterval(init, 1000) //milliseconds: 1/1000 = 1초  //init() (X)
