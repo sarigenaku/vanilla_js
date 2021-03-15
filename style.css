@@ -9,3 +9,15 @@ h3 {
 #text2 {
     color: dodgerblue
 }
+
+h1 {
+    color:#34495e;
+}
+
+.clicked {
+    color: #7f8c8d;
+}
+
+.btn {
+    cursor:pointer;
+}
