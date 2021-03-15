@@ -5,12 +5,7 @@ const CLICKED_CLASS = "clicked";
 
 
 function handleClick() {
-    const hasClass = eva.classList.contains(CLICKED_CLASS);
-    if (hasClass) {
-        eva.classList.remove(CLICKED_CLASS);
-    } else {
-        eva.classList.add(CLICKED_CLASS);
-    }
+    eva.classList.toggle(CLICKED_CLASS);
 }
 
 function init() {
