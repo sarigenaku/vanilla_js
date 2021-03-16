@@ -1,7 +1,8 @@
-.visible {
-    display: block;
+.form,
+.greetings {
+    display: none;
 }
 
-.invisible {
-    display: none;
+.showing {
+    display: block;
 }

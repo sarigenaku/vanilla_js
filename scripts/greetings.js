@@ -1,27 +1,28 @@
-//변수
-//currentUser, elements to show outputs
-const currentUser = localStorage.getItem("currentUser")
-const jsInput = document.querySelector(".js-input"), ip = jsInput.querySelector("input") //class 속성값이 아니니까 .input (X)
-const jsGreetings = document.querySelector(".js-greetings"), h = jsGreetings.querySelector("h1")
+const form = document.querySelector(".js-form"),
+    input = form.querySelector("input"),
+    greeting = document.querySelector(".js-greetings");
 
-//함수
-//currentUser가 있으면 헬로, 없으면 변화 없음
-function greetings() {
+const USER_LS = "currentUser",
+    SHOWING_CN = "showing";
+
+
+function paintGreeting(text) {
+    form.classList.remove(SHOWING_CN);
+    greeting.classList.add(SHOWING_CN);
+    greeting.innerText = `Hello ${text}`;
+}
+
+function loadName() {
+    const currentUser = localStorage.getItem(USER_LS);
     if (currentUser === null) {
-        console.log("No one assigned")
+        // she is not
     } else {
-        ip.classList.remove("visible")
-        ip.classList.add("invisible")
-        h.classList.remove("invisible")
-        h.classList.add("visible")
-        h.innerHTML = `Hello! ${currentUser}!`
+        paintGreeting(currentUser);
     }
 }
 
-//init()
 function init() {
-    greetings()
+    loadName();
 }
 
-//함수 실행
-init()
+init();
