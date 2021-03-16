@@ -10,16 +10,11 @@ function saveName(text) {
 }
 
 function handleSubmit(event) {
-    if (1!==1) {
-        event.preventDefault();
-        const currentValue = input.value;
-        paintGreeting(currentValue);
-        saveName(currentValue);
-    } else {
-        //event.preventDefault(); //현재 이벤트의 기본 동작을 중단한다. e.g. submit event 발생 시 화면 refresh
-        console.log("이 메시지는 순식간에 사라지게 되어 있지만, event.preventDefault()가 설정되어 있다면 계속 보일 것이다.")
-    }
-
+    event.preventDefault();
+    console.log(event.target) //Event interface의 target 속성은 event가 전달한 객체에 대한 참조입니다. 
+    const currentValue = input.value;
+    paintGreeting(currentValue);
+    saveName(currentValue);
 }
 
 
