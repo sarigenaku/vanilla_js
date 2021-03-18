@@ -12,9 +12,9 @@ function paintToDo(text) {
     const span = document.createElement("span");
     span.innerText = text;
 
-    li.appendChild(delBtn);
-    li.appendChild(span);
-    toDoList.appendChild(li);
+    li.appendChild(delBtn); 
+    li.appendChild(span); //const liVariable = li.appendChild(span); (X)
+    toDoList.appendChild(li); //toDoList.appendChild(liVariable); (X)
 }
 
 function handleSubmit(event) {
