@@ -3,6 +3,12 @@ const toDoForm = document.querySelector(".js-toDoForm"),
     toDoList = document.querySelector(".js-toDoList");
 
 const TODOS_LS = "toDos";
+const ARRAY_LS = []
+
+function saveToDo(text) {
+    ARRAY_LS.push(text);
+    localStorage.setItem(TODOS_LS, JSON.stringify(ARRAY_LS)); //["aa","bb","cc","dd"] -> 쉼표 앞뒤로 한 칸 띄우기를 하지 않는다.
+}
 
 function paintToDo(text) {
     const li = document.createElement("li");
@@ -20,14 +26,20 @@ function paintToDo(text) {
 function handleSubmit(event) {
     event.preventDefault();
     const currentValue = toDoInput.value;
+    saveToDo(currentValue);
     paintToDo(currentValue);
     toDoInput.value = "";
 }
 
 function loadToDos() {
-    const toDos = localStorage.getItem(TODOS_LS);
+    const toDos = JSON.parse(localStorage.getItem(TODOS_LS));
     if (toDos !== null) {
-        console.log("localStorage에 저장한 값 꺼내오는 코드는 아직 완성 X")
+        toDos.forEach(element => {
+            ARRAY_LS.push(element); //element.text (X)
+            paintToDo(element);
+        });
+    } else {
+        console.log("새로운 ToDo를 추가해 주세용")
     }
 }
 
