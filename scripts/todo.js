@@ -3,13 +3,14 @@ const toDoForm = document.querySelector(".js-toDoForm"),
     toDoList = document.querySelector(".js-toDoList");
 
 const TODOS_LS = "toDos";
-let toDos = [];
+let toDos = []; //const toDos (X)
 
 function deleteToDo(event) {
     const btn = event.target;
     const li = btn.parentNode;
 
     toDoList.removeChild(li);
+    //console.log(typeof(li.id))
     
     const cleanToDos = toDos.filter(function(toDo) {
         return toDo.id !== parseInt(li.id);
