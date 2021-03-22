@@ -3,27 +3,33 @@ const toDoForm = document.querySelector(".js-toDoForm"),
     toDoList = document.querySelector(".js-toDoList");
 
 const TODOS_LS = "toDos";
-const toDos = [];
+let toDos = [];
+
+function deleteToDo(event) {
+    const btn = event.target;
+    const li = btn.parentNode;
+
+    toDoList.removeChild(li);
+    
+    const cleanToDos = toDos.filter(function(toDo) {
+        return toDo.id !== parseInt(li.id);
+    });
+    toDos = cleanToDos;
+    saveToDos();
+}
 
 function saveToDos() {
     localStorage.setItem(TODOS_LS, JSON.stringify(toDos)); //["aa","bb","cc","dd"] -> 쉼표 앞뒤로 한 칸 띄우기를 하지 않는다.
-}
-
-function removeToDos(id) {
-    const index = id -1;
-    console.log(index);
-    localStorage.removeItem("toDos");
 }
 
 function paintToDo(text) {
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
     const span = document.createElement("span");
-    const newId = toDos.length +1;
+    const newId = toDos.length + 1;
 
     delBtn.innerText = "X";
-    //const test = "test value"
-    delBtn.addEventListener("click", removeToDos(newId))    
+    delBtn.addEventListener("click", deleteToDo);
 
     span.innerText = text;
 
@@ -39,14 +45,6 @@ function paintToDo(text) {
     toDos.push(toDoObj); //toDos가 빈 배열이어서, localStorage에서 값을 불러오는 경우라 할지라도 중복이 일어나지 않는 것.
     saveToDos();
 
-    /*if (toDoList.li.delBtn) {
-
-        for (const i = 0; i < 9; i++) {
-            delBtn.addEventListener("click", removeToDos(i))
-        }
-    } else {
-        console.log("아직 할일 추가 안 됨")
-    }*/  
 }
 
 function handleSubmit(event) {
