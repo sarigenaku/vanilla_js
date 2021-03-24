@@ -1,16 +1,15 @@
 const COORDS = "coords";
 
-function saveCoords(obj) {
-    localStorage.setItem(COORDS, JSON.stringify(obj));
+function saveCoords(coordsObj) {
+    localStorage.setItem(COORDS, JSON.stringify(coordsObj));
 }
 
 function handleGeoSuccess(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-
     const coordsObj = {
-        latitude: latitude,
-        longitude: longitude,
+        latitude, //변수명과 값이 같은 경우에는 이렇게만 써도 됨
+        longitude
     }
 
     saveCoords(coordsObj);
