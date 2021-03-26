@@ -1,4 +1,5 @@
 const COORDS = "coords";
+const APPID = "86e6ac817e4b9bf8aa9256ea376b8c70";
 
 function saveCoords(coordsObj) {
     localStorage.setItem(COORDS, JSON.stringify(coordsObj));
@@ -29,8 +30,20 @@ function loadCoords() {
     if (loadedCords === null) {
         askForCoords();
     } else {
-        //getWeather
+        //localStorage에서 위도, 경도 값을 꺼내와서, api url에 포함시켜 response를 얻어오고, response에서 필요한 항목의 값을 꺼내 콘솔에 찍어보자.
+        const cor = JSON.parse(loadedCords);
+        const lat = cor["latitude"];
+        const lon = cor["longitude"];
+
+        askForWeatherInfo(lat, lon);
+
     }
+}
+
+function askForWeatherInfo(lat, lon) {
+    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APPID}&units=metric`)
+        .then(response => response.json())
+        .then(data => console.log(`습도는 ${data.main.humidity}도`)); //습도 읽어오기
 }
 
 function init() {
