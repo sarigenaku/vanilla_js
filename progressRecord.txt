@@ -1,0 +1,79 @@
+[V] #0 Introduction
+ [V] 완성 프로젝트 실행해보기
+  [V] JS의 브라우저 환경 vs. Node.js 환경, JS 가상환경 필요 여부, JS의 정의
+   [V] 애초에 JS란?
+  [X] Weather값 로드하려면? -> 외부 API의 response값에서 갖다 쓰는 듯.
+  [->] 프로젝트 구조 분석 -> 너무 늘어지는 감이 있어 일단 강의 듣기로 함. 이번 플젝에선 JS의 전역함수 활용 및 HTML 접근 가능한 기능을 이용한다는 게 중심인 듯.
+   [X] Document.querySelector()란?
+   [X] JS Script에는 DOM의 함수를 적절히 섞어 쓰는 건가? e.g. clock.js의 Date(), .innerHTML, setInterval( ...) 등
+[V] #1 Theory
+ - JS란? -> frontend의 유일한 플밍 언어, 빨리 발전, VSC는 JS로 만들어짐.
+ - 왜 JS는 대체할 수 없는가? -> interactive한 걸 만들 때 유용.
+[V] #2 Practice
+ [V] #2.6 DOM -if else -Function Pracice     = commit #1e434eb
+  [V] 예전에 한 거긴 한데 기억에서 삭제됨. 코드 따라써 보자
+ [V] #2.7 DOM -if else -Function Practice (2) = ?
+  [V] 요건 필기만 해놓고 막상 코드는 안 쳐본 듯. 그냥 처음부터 다시 듣자.
+  [V] element.classList.remove/add 커밋하고,(왜 강의 화면 보고 따라친 코드가 안 먹히지? 강의 안 보고 트러블슈트 해보자 -> 단순히 html에서 js를 불러오지 않아서링...
+[V] #3 Make your first JS app
+ [V] #3.0 Making a JS Clock part 1
+  [X] Date() vs. new Date()?
+ [V] #3.1 Making a JS Clock part 2; setInterval 사용하여 시간값 자동 갱신하기
+ [V] #3.2 Saving the User Name part 1: localStorage
+  [V] chrome developer tool을 써서, 코드에 이것저것 테스트해보려면? -> applications 탭에서 값 추가 or console에서 localstorage.setItem("...", ...)
+  [V] 내 스스로 코드 써보기 -> 피드백받기
+   [V] querySelector로 자식 element가 인식되지 않음. 이거 해결부터! -> 클래스 속성값인데 앞에 .을 안 붙여서 인식이 안 되었던 거였음.
+   [V] 니코 답 반영하고, 강의 나머지 듣고, 커밋
+ [V] #3.3 Saving the User Name part 2
+  [V] 대충 파악 끝났으니 우선 스스로 실장!
+  [V] 니코 답 반영 완료. 강의 나머지 듣고, 커밋!
+ [V] #3.4 Making a To Do List part 1
+  [V] 니코 답 반영하고 커밋!
+  [V] appendChild 별도 연습
+   [V] const TaskToBeAdded = parent.appendChild(child)(수정 전) vs. parent(수정 후) 각각 콘솔에 찍어보기 -> 전자는 child의 값이 나오고, 후자의 경우 <li>"내용"</li>가 나옴. 패런트에 차일드를 넣고 그걸 변수화하면 내용물이 바뀌어버리는구나.
+ [V] #3.5 Making a To Do List part 2
+  [V] 할 일 추가, 불러오기, 저장 (삭제 아직 x) 스스로 코딩/커밋
+   [V] localStorage.getItem으로 저장된 배열을 가져와서, JSON.parse()하는 흐름?
+  [V] 니코 답 반영
+   [V] 니코쌤의 정답에선, localStorage에서 이미 저장된 값 불러올 때, 또다시 저장이 이루어지는 거 아닌가? -> 배열을 첨부터 다시 만들어 저장하는지라 중복 저장은 발생하지 않음!
+  [V] 강의 보고 추가로 필기하고, 
+  [V] 니코 답 커밋!
+ [V] #3.6 Making a To Do List part 3: 삭제 기능 추가
+  [V] 내 답 구상하고 써보기
+   [V] 각 ToDo를 어떤 방법으로 특정하여 localStorage.removeItem하는 거지? -> 인터넷 검색 참고 중
+   [V] 니코 답 반영하고, 연습하고, 강의 듣고, 커밋 후 다음 강의!
+    [X] parseInt(li.id)의 이유는? 애초에 이렇게 결정하게 된 흐름은?
+ [V] #3.7 Image Background
+  [V] 대강 코드의 흐름만 파악
+   [V] 모르는 소스코드 조사
+    [X] 생성자/정적 메서드/정적 프로퍼티의 차이는? & 정적 메서드/프로퍼티에 대해 연습 -> 개념은 알겠는데 뭔가 이렇다 할 예시가 없네.
+    [V] __proto__, prototype은 또 뭐뇨
+    [V] CSS문의 기본 구조?
+     [V] @-규칙? e.g. @Keyframes
+  [V] 내 답 구상하고 써 보기
+  [V] 니코 답 반영하고, 연습하고, 강의 듣고, 커밋 후 다음 강의!
+ [V] #3.8 Getting the Weather Part One Geolocation
+  [V] 대강 코드의 흐름만 파악
+   [V] 모르는 소스코드 조사
+  [V] 내 답 구상하고 써 보기
+  [V] 니코 답 반영하고, 연습하고, 강의 듣고, 빠진 코드 내 답/니코 답 비교/커밋하고, 강의 마저 보고(ing), 다음 강의!
+   [V] 단축 속성명(ES6)이란?
+    [V] ECMAScript 2015 = ES6 인가?
+ [V] #3.9 Getting the Weater Part Two API 
+  [V] 코멘트나 강의 대강 보며 코드 흐름 파악 *api key: 86e6ac817e4b9bf8aa9256ea376b8c70
+  [V] 안 보고 코딩해보기
+   [V] 자바스크립트에서 외부 api 쓰는 방법은 fetch만 있나? MDN 문서의 어디에 소개되어 있음? -> AJAX, XMLHttpRequest, Fetch, Promise 등 일련의 관련 흐름 싹 훑기 -> Fetch 항목부터 차례대로 쭉 정리하기!
+  [V] 니코 답 반영하고, 
+  [V] 비교 및 커밋하고,
+  [V] 강의 듣기
+
+--------
+1. 코멘트란 먼저 보고, 코드 구상해보기 + 웹 조사
+2. 강의 흐름만 파악하는 수준에서 가볍게 보고, 코드 구상해보기 + 웹 조사
+3. 모르는 점 표시해두고(위의 to do list에 정리하기), 강의에서 피드백 얻고, 정답 및 연습 반영하고, 커밋!
+--------
+ ↓단축 버전(정말 시간 없을 때만...): 근데 또 엄청 대충 넘기는 건 싫어. 암튼 밸런스 잘 잡아봐.
+--------
+1. 강의 보며 코드 일단 다 따라 써보고, 각 구성요소가 MDN 문서의 어디쯤에 있나 추측해본 후, 코드 써보기
+2. 답 보며 셀프 피드백, 커밋
+--------
